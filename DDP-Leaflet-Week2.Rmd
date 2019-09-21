@@ -1,0 +1,46 @@
+---
+title: "Developing Data Products - LeafLet Map"
+author: "Venkat Vasam"
+
+output: html_document
+---
+
+
+```{r setup, include=FALSE,echo = TRUE, warning=FALSE,message=FALSE,comment=NA}
+knitr::opts_chunk$set(echo = TRUE,cache=TRUE)
+```
+
+
+```{r  include=FALSE,echo = TRUE, warning=FALSE,message=FALSE,comment=NA}
+
+library(leaflet)
+
+library(lubridate)
+
+setwd("C:\\Wrksps\\dev\\DataScienceCE\\datasciencecoursera\\DevelopingDataProducts\\Week2\\Github-w2\\coursera-ddp2")
+
+statesGeo<-"UsStates1.csv"
+usStatesGeo<-read.csv(statesGeo)
+usStatesGeo
+
+
+
+today <- Sys.Date()
+
+reviewDate<-today %m+% months(-2)
+
+reviewDate
+```
+
+
+Date: `r format(today, ' %B %d, %Y')`
+
+
+```{r  echo = FALSE, warning=FALSE,message=FALSE,comment=NA}
+
+usStatesMap<-usStatesGeo %>% leaflet() %>% addTiles() %>% addMarkers(popup=usStatesGeo$description)
+
+usStatesMap
+
+
+```
