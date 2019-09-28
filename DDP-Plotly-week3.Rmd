@@ -1,0 +1,33 @@
+---
+title: "A plot with Plotly"
+author: "Venkat Vasam"
+date: "September 28, 2019"
+output: html_document
+---
+
+
+```{r setup, include=FALSE,echo = TRUE, warning=FALSE,message=FALSE,comment=NA}
+knitr::opts_chunk$set(echo = TRUE,cache=TRUE)
+```
+
+Highway Miles Per Gallon efficiency of Vehicles Based On Engine Size
+
+```{r  include=FALSE,echo = TRUE, warning=FALSE,message=FALSE,comment=NA}
+
+library(plotly)
+
+today <- Sys.Date()
+
+
+```
+
+
+Date: `r format(today, ' %B %d, %Y')`
+
+
+```{r  echo = FALSE, warning=FALSE,message=FALSE,comment=NA}
+
+phwy<-plot_ly(mpg, x=~displ, y=~hwy,color=~class)
+phwy
+
+```
