@@ -1,7 +1,7 @@
 ---
 title: "A plot with Plotly"
 author: "Venkat Vasam"
-date: "September 28, 2019"
+
 output: html_document
 ---
 
