@@ -16,13 +16,18 @@ Highway Miles Per Gallon efficiency of Vehicles Based On Engine Size
 
 library(plotly)
 
+library(lubridate)
+
 today <- Sys.Date()
 
+reviewDate<-today %m+% months(-2)
+
+reviewDate
 
 ```
 
 
-Date: `r format(today, ' %B %d, %Y')`
+Date: `r format(reviewDate, ' %B %d, %Y')`
 
 
 ```{r  echo = FALSE, warning=FALSE,message=FALSE,comment=NA}
